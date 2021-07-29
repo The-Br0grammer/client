@@ -17,7 +17,7 @@ const avatarOptions = {
     "p"  : "fas fa-spider purple",
     "q"  : "fas fa-spider gold",
     "r"  : "fas fa-spider gold",
-    "s"  : "fas fa-horse-head red",
+    "s"  : "fas fa-cat green",
     "t"  : "fas fa-horse-head blue",
     "u"  : "fas fa-horse-head purple",
     "v"  : "fas fa-horse-head gold",
@@ -26,5 +26,6 @@ const avatarOptions = {
     "y"  : "fas fa-dove blue",
     "z"  : "fas fa-dove purple",
 };
+
 
 module.exports = avatarOptions;
