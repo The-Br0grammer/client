@@ -396,7 +396,7 @@ async function getUserData() {
   const username = localStorage.getItem("username");
   document.title = `${username}'s Habits`;
   document.getElementById("profileName").textContent = username;
-  let avatarLetter = username[0];
+  let avatarLetter = username[0].toLowerCase();
   let avatartag = avatarOptions[avatarLetter];
   if (!avatartag){
     avatartag = "fas fa-dragon red";
