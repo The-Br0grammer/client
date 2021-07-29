@@ -136,7 +136,7 @@ describe("login page", () => {
             <input id="submit-button" type="submit" value="sign up" spellcheck="false">
           </form></section>`
             helpers.updateFormData()
-            expect(document.querySelector("#login-signin").style.height).toBe("350px");
+            expect(document.querySelector("#login-signin").style.height).toBe("auto");
         })
 
         test("email form is shown", () => {
@@ -165,7 +165,7 @@ describe("login page", () => {
             <input id="submit-button" type="submit" value="sign up" spellcheck="false">
           </form></section>`
             helpers.updateFormData()
-            expect(document.querySelector("#login-signin").style.height).toBe("350px");
+            expect(document.querySelector("#login-signin").style.height).toBe("auto");
         })
 
         test("button text changes to login", () => {

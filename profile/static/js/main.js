@@ -319,6 +319,7 @@ async function getGraphData() {
 
 async function updateBadgesToProfile() {
   const data = await getBadgeData();
+  console.log(data);
 
   const userId = localStorage.getItem("userId");
 
@@ -379,6 +380,7 @@ async function getBadgeData() {
 
   const response = await fetch(`${serverUrl}/badges/${userId}`);
   const data = await response.json();
+  console.log(data);
 
   return data;
 }
