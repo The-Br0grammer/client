@@ -1,40 +1,17 @@
-(function () {
-  function r(e, n, t) {
-    function o(i, f) {
-      if (!n[i]) {
-        if (!e[i]) {
-          var c = "function" == typeof require && require;
-          if (!f && c) return c(i, !0);
-          if (u) return u(i, !0);
-          var a = new Error("Cannot find module '" + i + "'");
-          throw ((a.code = "MODULE_NOT_FOUND"), a);
-        }
-        var p = (n[i] = { exports: {} });
-        e[i][0].call(
-          p.exports,
-          function (r) {
-            var n = e[i][1][r];
-            return o(n || r);
-          },
-          p,
-          p.exports,
-          r,
-          e,
-          n,
-          t
-        );
-      }
-      return n[i].exports;
-    }
-    for (
-      var u = "function" == typeof require && require, i = 0;
-      i < t.length;
-      i++
-    )
-      o(t[i]);
-    return o;
-  }
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const loginButton = document.querySelector("#login-button");
+const signInButton = document.querySelector("#sign-up-button");
 
+function clearAllInputFields() {
+  const inputs = document.querySelectorAll("input");
+
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].type === "submit") {
+      continue;
+    } else {
+      inputs[i].value = "";
+    }
+  }
 }
 
 function setActiveButton(e) {
@@ -61,17 +38,19 @@ function updateFormData() {
   const card = document.getElementById("login-signin");
   const confirmPasswordDiv = document.getElementById("row4");
 
+  let width = window.innerWidth;
+
   if (formHeading.textContent === "log in.") {
     location.hash = "signup";
     formHeading.textContent = "sign up.";
     submitButton.value = "sign up";
-      if (width < "460") {
-              email.style.display = "inline";
-              confirmPasswordDiv.style.display = "inline";
-            } else {
-              email.style.display = "block";
-              confirmPasswordDiv.style.display = "block";
-            }
+    if (width < "460") {
+      email.style.display = "inline";
+      confirmPasswordDiv.style.display = "inline";
+    } else {
+      email.style.display = "block";
+      confirmPasswordDiv.style.display = "block";
+    }
     card.style.height = "auto";
   } else {
     location.hash = "login";
@@ -168,14 +147,13 @@ form.addEventListener("submit", async (e) => {
     options
   );
 
+  
   const tokenData = await response.json();
-
 
   if (tokenData.err) {
     document.getElementById("error-messages").textContent = "username or Email already in use.";
     return;
   }
-
 
   if (requestType === "#login") {
     const userData = jwt_decode(tokenData.token);

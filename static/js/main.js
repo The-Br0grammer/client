@@ -65,6 +65,7 @@ form.addEventListener("submit", async (e) => {
     options
   );
 
+  
   const tokenData = await response.json();
 
   if (tokenData.err) {

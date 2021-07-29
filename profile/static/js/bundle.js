@@ -485,7 +485,7 @@ async function addHabit(e) {
 
     return;
   }
-
+  
   const options = {
     method: "POST",
     headers: {
@@ -568,7 +568,6 @@ async function updateBadgesToProfile() {
       document.getElementById("badge-name").remove();
     });
   });
-
 
   document.querySelector("#profileInfo").append(badgeSection);
 
