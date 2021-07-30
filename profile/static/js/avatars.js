@@ -6,7 +6,7 @@ const avatarOptions = {
     "e"  : "fas fa-dragon blue",
     "f"  : "fas fa-dragon purple",
     "g"  : "fas fa-cat green",
-    "h"  : "fas fa-cat green",
+    "h"  : "fas fa-dove purple",
     "i"  : "fas fa-cat red",
     "j"  : "fas fa-cat blue",
     "k"  : "fas fa-cat purple",
